@@ -698,10 +698,10 @@
                 <div style="display:flex;flex-direction:column;gap:16px;">
                   <div style="border:1px solid #E8EBE9;border-radius:13px;padding:16px;">
                     <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span style="font-size:13px;font-weight:700;">Revenue Trend</span><span style="font-size:12px;color: {{ bm.brand.revGrowthColor }};font-weight:600;">{{ bm.brand.revGrowth }}</span></div>
-                    <svg viewBox="0 0 320 90" preserveAspectRatio="none" style="width:100%;height:96px;">
+                    <svg viewBox="0 0 320 80" preserveAspectRatio="none" style="width:100%;height:96px;">
                     <line x1="0" y1="0" x2="320" y2="0" stroke="#F0F1F0" stroke-width="1"/>
-                    <line x1="0" y1="45" x2="320" y2="45" stroke="#F0F1F0" stroke-width="1" stroke-dasharray="4,3"/>
-                    <line x1="0" y1="90" x2="320" y2="90" stroke="#F0F1F0" stroke-width="1"/>
+                    <line x1="0" y1="40" x2="320" y2="40" stroke="#F0F1F0" stroke-width="1" stroke-dasharray="4,3"/>
+                    <line x1="0" y1="80" x2="320" y2="80" stroke="#F0F1F0" stroke-width="1"/>
                     <polygon points="{{ bm.brand.area }}" fill="rgba(27,138,92,.09)"/>
                     <polyline points="{{ bm.brand.line }}" fill="none" stroke="#1B8A5C" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
                     <sc-for list="{{ bm.brand.brandTrendPts }}" as="pt" hint-placeholder-count="12">
@@ -904,10 +904,10 @@
                   <span style="font-size:9.5px;color:#B7BDB9;text-align:right;">{{ bm.store.trendYMin }}</span>
                 </div>
                 <div style="flex:1;position:relative;">
-                  <svg viewBox="0 0 640 100" preserveAspectRatio="none" style="width:100%;height:120px;display:block;">
-                    <line x1="0" y1="0" x2="640" y2="0" stroke="#F0F1F0" stroke-width="1"/>
-                    <line x1="0" y1="50" x2="640" y2="50" stroke="#F0F1F0" stroke-width="1" stroke-dasharray="4,3"/>
-                    <line x1="0" y1="100" x2="640" y2="100" stroke="#F0F1F0" stroke-width="1"/>
+                  <svg viewBox="0 0 320 80" preserveAspectRatio="none" style="width:100%;height:120px;display:block;">
+                    <line x1="0" y1="0" x2="320" y2="0" stroke="#F0F1F0" stroke-width="1"/>
+                    <line x1="0" y1="40" x2="320" y2="40" stroke="#F0F1F0" stroke-width="1" stroke-dasharray="4,3"/>
+                    <line x1="0" y1="80" x2="320" y2="80" stroke="#F0F1F0" stroke-width="1"/>
                     <polygon points="{{ bm.store.area }}" fill="rgba(27,138,92,.09)"/>
                     <polyline points="{{ bm.store.line }}" fill="none" stroke="#1B8A5C" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
                     <sc-for list="{{ bm.store.trendPts }}" as="pt" hint-placeholder-count="12">
@@ -1560,7 +1560,7 @@ class Component extends DCLogic {
         const MONTHS12B=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
         const trB=bsAll[0].trend.map((_,i)=>bsAll.reduce((a,s)=>a+s.trend[i],0));
         const trBMax=Math.max(...trB),trBMin=Math.min(...trB),trBRng=trBMax-trBMin||1;
-        const brandTrendPts=trB.map((v,i)=>{const x=(6+i/(trB.length-1)*(320-12)).toFixed(1);const y=(90-6-((v-trBMin)/trBRng)*(90-12)).toFixed(1);return{cx:x,cy:y,fn:(e)=>this.ttShow(e,MONTHS12B[i%12],['Revenue: AED '+this.aedShort(v)]),fl:()=>this.ttHide()};});
+        const brandTrendPts=trB.map((v,i)=>{const x=(6+i/(trB.length-1)*(320-12)).toFixed(1);const y=(80-6-((v-trBMin)/trBRng)*(80-12)).toFixed(1);return{cx:x,cy:y,fn:(e)=>this.ttShow(e,MONTHS12B[i%12],['Revenue: AED '+this.aedShort(v)]),fl:()=>this.ttHide()};});
         const recCntB={};bsAll.forEach(s=>recCntB[s.recommendedCampaign]=(recCntB[s.recommendedCampaign]||0)+1);const bestRecB=Object.entries(recCntB).sort((a,b)=>b[1]-a[1])[0][0];
         const dayCntB={};bsAll.forEach(s=>dayCntB[s.peakDays]=(dayCntB[s.peakDays]||0)+1);const topDaysB=Object.entries(dayCntB).sort((a,b)=>b[1]-a[1])[0]&&Object.entries(dayCntB).sort((a,b)=>b[1]-a[1])[0][0]||'weekends';
         const rgB={};bsAll.forEach(s=>{if(!rgB[s.regionId])rgB[s.regionId]={name:s.regionName,stores:[],revenue:0,txns:0,customers:0};const rb=rgB[s.regionId];rb.stores.push(s);rb.revenue+=s.revenue;rb.txns+=s.txns;rb.customers+=s.customers;});
@@ -1613,7 +1613,7 @@ class Component extends DCLogic {
         // trend chart interactive points
         const MONTHS12=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
         const trMax=Math.max(...sm.trend),trMin=Math.min(...sm.trend),trRng=trMax-trMin||1;
-        const trendPts=sm.trend.map((v,i)=>{const x=(6+i/(sm.trend.length-1)*(640-12)).toFixed(1);const y=(100-6-((v-trMin)/trRng)*(100-12)).toFixed(1);return{cx:x,cy:y,fn:(e)=>this.ttShow(e,MONTHS12[i%12],['Revenue: AED '+this.aedShort(v),'MoM: '+(i>0?(v>=sm.trend[i-1]?'↑':'↓')+Math.abs(((v-sm.trend[i-1])/sm.trend[i-1])*100).toFixed(1)+'%':'—')]),fl:()=>this.ttHide()};});
+        const trendPts=sm.trend.map((v,i)=>{const x=(6+i/(sm.trend.length-1)*(320-12)).toFixed(1);const y=(80-6-((v-trMin)/trRng)*(80-12)).toFixed(1);return{cx:x,cy:y,fn:(e)=>this.ttShow(e,MONTHS12[i%12],['Revenue: AED '+this.aedShort(v),'MoM: '+(i>0?(v>=sm.trend[i-1]?'↑':'↓')+Math.abs(((v-sm.trend[i-1])/sm.trend[i-1])*100).toFixed(1)+'%':'—')]),fl:()=>this.ttHide()};});
         const trendYMax='AED '+this.aedShort(trMax),trendYMin='AED '+this.aedShort(trMin);
         // benchmark hover
         const bmarks2=bmarks.map(b=>({...b,fn:(e)=>this.ttShow(e,b.label,['Revenue: AED '+b.fmt,'vs city avg: '+(b.val>cAvg2?'+':(b.val===cAvg2?'0':''))+((b.val-cAvg2)/cAvg2*100).toFixed(1)+'%']),fl:()=>this.ttHide()}));
