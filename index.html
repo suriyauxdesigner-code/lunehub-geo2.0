@@ -251,13 +251,13 @@
           <div style="margin-top:16px;">
             <div style="font-size:12px;font-weight:600;color:#9AA0A6;text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px;">Hour of Day · Peak <span style="color:#147A4F;">{{ peakTime }}</span></div>
             <div style="display:flex;gap:8px;align-items:flex-end;">
-              <div style="display:flex;flex-direction:column;justify-content:space-between;height:72px;margin-bottom:20px;flex:none;">
+              <div style="display:flex;flex-direction:column;justify-content:space-between;height:108px;margin-bottom:20px;flex:none;">
                 <span style="font-size:9px;color:#C5CAC7;">100%</span>
                 <span style="font-size:9px;color:#C5CAC7;">50%</span>
                 <span style="font-size:9px;color:#C5CAC7;">0%</span>
               </div>
               <div style="flex:1;">
-                <div style="display:flex;align-items:flex-end;gap:2px;height:72px;">
+                <div style="display:flex;align-items:flex-end;gap:2px;height:108px;">
                   <sc-for list="{{ hourly }}" as="h" hint-placeholder-count="24">
                     <div onMouseEnter="{{ h.fn }}" onMouseLeave="{{ h.fl }}" style="flex:1;display:flex;align-items:flex-end;height:100%;cursor:default;"><div style="width:100%;border-radius:2px 2px 0 0;background: {{ h.color }};height: {{ h.bh }};transition:opacity .15s;" style-hover="opacity:.75;"></div></div>
                   </sc-for>
@@ -268,7 +268,7 @@
           </div>
           <div style="margin-top:14px;">
             <div style="font-size:12px;font-weight:600;color:#9AA0A6;text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px;">Day of Week · Peak <span style="color:#147A4F;">{{ peakDay }}</span></div>
-            <div style="display:flex;align-items:flex-end;gap:8px;height:60px;">
+            <div style="display:flex;align-items:flex-end;gap:8px;height:84px;">
               <sc-for list="{{ daily }}" as="d" hint-placeholder-count="7">
                 <div onMouseEnter="{{ d.fn }}" onMouseLeave="{{ d.fl }}" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:5px;cursor:default;">
                   <div style="width:100%;border-radius:4px 4px 0 0;background: {{ d.color }};height: {{ d.bh }};transition:opacity .15s;" style-hover="opacity:.75;"></div>
@@ -288,7 +288,7 @@
           </div>
           <div style="margin-top:14px;">
             <div style="font-size:12px;font-weight:600;color:#9AA0A6;margin-bottom:9px;">New vs Returning</div>
-            <div style="display:flex;height:28px;border-radius:8px;overflow:hidden;">
+            <div style="display:flex;height:34px;border-radius:10px;overflow:hidden;">
               <div style="background:#1B8A5C;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11.5px;font-weight:600;width: {{ custNewBar }};">New {{ custNewPct }}</div>
               <div style="background:#C5E3D3;display:flex;align-items:center;justify-content:center;color:#0F6B46;font-size:11.5px;font-weight:600;width: {{ custRetBar }};">Return {{ custRetPct }}</div>
             </div>
@@ -296,7 +296,7 @@
           <div style="margin-top:14px;">
             <div style="font-size:12px;font-weight:600;color:#9AA0A6;margin-bottom:9px;">Customer Segments</div>
             <sc-for list="{{ custSegments }}" as="g" hint-placeholder-count="4">
-              <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;"><span style="width:84px;font-size:12px;color:#3C4440;">{{ g.name }}</span><div style="flex:1;height:7px;background:#EEF0EE;border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background: {{ g.color }};width: {{ g.bw }};"></div></div><span style="width:34px;text-align:right;font-size:12px;font-weight:600;">{{ g.pct }}</span></div>
+              <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;"><span style="width:84px;font-size:12px;color:#3C4440;">{{ g.name }}</span><div style="flex:1;height:9px;background:#EEF0EE;border-radius:4px;overflow:hidden;"><div style="height:100%;border-radius:4px;background: {{ g.color }};width: {{ g.bw }};"></div></div><span style="width:34px;text-align:right;font-size:12px;font-weight:600;">{{ g.pct }}</span></div>
             </sc-for>
           </div>
         </div>
@@ -389,7 +389,7 @@
             </div>
             <div style="border:1px solid #E8EBE9;border-radius:11px;padding:13px 15px;margin-top:11px;">
               <div style="display:flex;justify-content:space-between;"><span style="font-size:13px;font-weight:700;">Revenue Trend</span><span style="font-size:12px;font-weight:600;color: {{ dr.revGrowthColor }};">{{ dr.revGrowth }}</span></div>
-              <svg viewBox="0 0 320 80" preserveAspectRatio="none" style="width:100%;height:70px;margin-top:8px;"><polygon points="{{ dr.area }}" fill="rgba(27,138,92,.10)"/><polyline points="{{ dr.line }}" fill="none" stroke="#1B8A5C" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+              <svg viewBox="0 0 320 80" preserveAspectRatio="none" style="width:100%;height:90px;margin-top:8px;"><polygon points="{{ dr.area }}" fill="rgba(27,138,92,.10)"/><polyline points="{{ dr.line }}" fill="none" stroke="#1B8A5C" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
               <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#B7BDB9;"><span>Jan</span><span>Jun</span><span>Dec</span></div>
             </div>
           </div>
@@ -425,7 +425,7 @@
             </div>
             <div style="font-size:14px;font-weight:700;margin-bottom:10px;">Catchment Analysis</div>
             <sc-for list="{{ dr.catch }}" as="c" hint-placeholder-count="4">
-              <div style="margin-bottom:9px;"><div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;"><span style="color:#3C4440;">{{ c.name }}</span><span style="font-weight:700;">{{ c.pct }}</span></div><div style="height:7px;background:#EEF0EE;border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background:#2BA89A;width: {{ c.bw }};"></div></div></div>
+              <div style="margin-bottom:9px;"><div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;"><span style="color:#3C4440;">{{ c.name }}</span><span style="font-weight:700;">{{ c.pct }}</span></div><div style="height:9px;background:#EEF0EE;border-radius:4px;overflow:hidden;"><div style="height:100%;border-radius:4px;background:#2BA89A;width: {{ c.bw }};"></div></div></div>
             </sc-for>
             <div style="font-size:14px;font-weight:700;margin:16px 0 10px;">Customer Mobility</div>
             <div style="font-size:12.5px;color:#5C6360;margin-bottom:8px;">Customers in {{ dr.name }} also spend in:</div>
@@ -462,7 +462,7 @@
             </div>
             <div style="border:1px solid #E8EBE9;border-radius:11px;padding:13px 15px;margin-top:11px;">
               <div style="display:flex;justify-content:space-between;"><span style="font-size:13px;font-weight:700;">Revenue Trend</span><span style="font-size:12px;color: {{ db.revGrowthColor }};font-weight:600;">{{ db.revGrowth }}</span></div>
-              <svg viewBox="0 0 320 80" preserveAspectRatio="none" style="width:100%;height:70px;margin-top:8px;"><polygon points="{{ db.area }}" fill="rgba(27,138,92,.10)"/><polyline points="{{ db.line }}" fill="none" stroke="#1B8A5C" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+              <svg viewBox="0 0 320 80" preserveAspectRatio="none" style="width:100%;height:90px;margin-top:8px;"><polygon points="{{ db.area }}" fill="rgba(27,138,92,.10)"/><polyline points="{{ db.line }}" fill="none" stroke="#1B8A5C" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
               <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#B7BDB9;"><span>Jan</span><span>Jun</span><span>Dec</span></div>
             </div>
           </div>
@@ -472,7 +472,7 @@
           <div>
             <div style="font-size:14px;font-weight:700;margin-bottom:12px;">Customer Segments</div>
             <sc-for list="{{ db.segments }}" as="g" hint-placeholder-count="4">
-              <div style="display:flex;align-items:center;gap:9px;margin-bottom:9px;"><span style="width:88px;font-size:12px;color:#3C4440;">{{ g.name }}</span><div style="flex:1;height:7px;background:#EEF0EE;border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background: {{ g.color }};width: {{ g.bw }};"></div></div><span style="width:34px;text-align:right;font-size:12px;font-weight:600;">{{ g.pct }}</span></div>
+              <div style="display:flex;align-items:center;gap:9px;margin-bottom:9px;"><span style="width:88px;font-size:12px;color:#3C4440;">{{ g.name }}</span><div style="flex:1;height:9px;background:#EEF0EE;border-radius:4px;overflow:hidden;"><div style="height:100%;border-radius:4px;background: {{ g.color }};width: {{ g.bw }};"></div></div><span style="width:34px;text-align:right;font-size:12px;font-weight:600;">{{ g.pct }}</span></div>
             </sc-for>
             <div style="font-size:14px;font-weight:700;margin:16px 0 10px;">Customers Also Shop</div>
             <div style="display:flex;gap:8px;flex-wrap:wrap;">
@@ -535,7 +535,7 @@
             </div>
             <div style="font-size:13.5px;font-weight:700;margin:14px 0 9px;">Conversion Funnel</div>
             <sc-for list="{{ ds.funnel }}" as="f" hint-placeholder-count="3">
-              <div style="margin-bottom:9px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span style="color:#3C4440;">{{ f.name }}</span><span style="font-weight:700;">{{ f.val }}</span></div><div style="height:8px;background:#EEF0EE;border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background:#1B8A5C;width: {{ f.bw }};"></div></div></div>
+              <div style="margin-bottom:9px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span style="color:#3C4440;">{{ f.name }}</span><span style="font-weight:700;">{{ f.val }}</span></div><div style="height:10px;background:#EEF0EE;border-radius:4px;overflow:hidden;"><div style="height:100%;border-radius:4px;background:#1B8A5C;width: {{ f.bw }};"></div></div></div>
             </sc-for>
           </div>
         </sc-if>
@@ -544,15 +544,15 @@
           <div>
             <div style="border:1px solid #E8EBE9;border-radius:11px;padding:13px 15px;margin-bottom:14px;">
               <div style="display:flex;justify-content:space-between;"><span style="font-size:13px;font-weight:700;">Revenue Trend</span><span style="font-size:12px;color: {{ ds.revGrowthColor }};font-weight:600;">{{ ds.revGrowth }}</span></div>
-              <svg viewBox="0 0 320 80" preserveAspectRatio="none" style="width:100%;height:70px;margin-top:8px;"><polygon points="{{ ds.area }}" fill="rgba(27,138,92,.10)"/><polyline points="{{ ds.line }}" fill="none" stroke="#1B8A5C" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+              <svg viewBox="0 0 320 80" preserveAspectRatio="none" style="width:100%;height:90px;margin-top:8px;"><polygon points="{{ ds.area }}" fill="rgba(27,138,92,.10)"/><polyline points="{{ ds.line }}" fill="none" stroke="#1B8A5C" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
               <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#B7BDB9;"><span>Jan</span><span>Jun</span><span>Dec</span></div>
             </div>
             <div style="font-size:13.5px;font-weight:700;margin-bottom:10px;">Benchmark Comparison</div>
             <sc-for list="{{ ds.benchmark }}" as="b" hint-placeholder-count="4">
-              <div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span style="color:#3C4440;">{{ b.label }}</span><span style="font-weight:700;">{{ b.fmt }}</span></div><div style="height:8px;background:#EEF0EE;border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background: {{ b.color }};width: {{ b.bw }};"></div></div></div>
+              <div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span style="color:#3C4440;">{{ b.label }}</span><span style="font-weight:700;">{{ b.fmt }}</span></div><div style="height:10px;background:#EEF0EE;border-radius:4px;overflow:hidden;"><div style="height:100%;border-radius:4px;background: {{ b.color }};width: {{ b.bw }};"></div></div></div>
             </sc-for>
             <div style="font-size:13.5px;font-weight:700;margin:14px 0 10px;">Spending by Time of Day</div>
-            <div style="display:flex;align-items:flex-end;gap:8px;height:74px;">
+            <div style="display:flex;align-items:flex-end;gap:8px;height:96px;">
               <sc-for list="{{ ds.dayParts }}" as="p" hint-placeholder-count="4">
                 <div style="flex:1;display:flex;align-items:flex-end;height:100%;"><div style="width:100%;border-radius:4px 4px 0 0;background: {{ p.color }};height: {{ p.bw }};"></div></div>
               </sc-for>
@@ -573,13 +573,13 @@
               <div style="background:#F5F6F5;border-radius:10px;padding:12px;"><div style="font-size:11px;color:#9AA0A6;">Avg visits</div><div style="font-size:18px;font-weight:700;margin-top:3px;">{{ ds.visits }}</div></div>
               <div style="background:#F5F6F5;border-radius:10px;padding:12px;"><div style="font-size:11px;color:#9AA0A6;">Spend/customer</div><div style="font-size:18px;font-weight:700;margin-top:3px;">{{ ds.spendPerCustomer }}</div></div>
             </div>
-            <div style="display:flex;height:26px;border-radius:7px;overflow:hidden;margin-bottom:14px;">
+            <div style="display:flex;height:34px;border-radius:10px;overflow:hidden;margin-bottom:14px;">
               <div style="background:#1B8A5C;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11.5px;font-weight:600;width: {{ ds.newBar }};">New {{ ds.newPct }}</div>
               <div style="background:#C5E3D3;display:flex;align-items:center;justify-content:center;color:#0F6B46;font-size:11.5px;font-weight:600;width: {{ ds.retBar }};">Return {{ ds.retPct }}</div>
             </div>
             <div style="font-size:13px;font-weight:700;margin-bottom:9px;">Customer Segments</div>
             <sc-for list="{{ ds.segments }}" as="g" hint-placeholder-count="4">
-              <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;"><span style="width:84px;font-size:12px;color:#3C4440;">{{ g.name }}</span><div style="flex:1;height:7px;background:#EEF0EE;border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background: {{ g.color }};width: {{ g.bw }};"></div></div><span style="font-size:12px;font-weight:600;">{{ g.pct }}</span></div>
+              <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;"><span style="width:84px;font-size:12px;color:#3C4440;">{{ g.name }}</span><div style="flex:1;height:9px;background:#EEF0EE;border-radius:4px;overflow:hidden;"><div style="height:100%;border-radius:4px;background: {{ g.color }};width: {{ g.bw }};"></div></div><span style="font-size:12px;font-weight:600;">{{ g.pct }}</span></div>
             </sc-for>
             <div style="font-size:13px;font-weight:700;margin:14px 0 10px;">Also Shops At</div>
             <div style="display:flex;gap:8px;flex-wrap:wrap;">
@@ -619,7 +619,7 @@
               <div style="border:1px solid #E8EBE9;border-radius:10px;padding:12px;"><div style="font-size:11px;color:#9AA0A6;">Online transactions</div><div style="font-size:15px;font-weight:700;margin-top:4px;">{{ ds.onlinePct }}</div></div>
             </div>
             <div style="font-size:13px;font-weight:700;margin-bottom:10px;">Spend by Card Type</div>
-            <div style="display:flex;height:13px;border-radius:6px;overflow:hidden;margin-bottom:9px;">
+            <div style="display:flex;height:20px;border-radius:7px;overflow:hidden;margin-bottom:10px;">
               <sc-for list="{{ ds.cardMix }}" as="c" hint-placeholder-count="3">
                 <div style="height:100%;background: {{ c.color }};width: {{ c.bw }};"></div>
               </sc-for>
@@ -698,14 +698,14 @@
                 <div style="display:flex;flex-direction:column;gap:16px;">
                   <div style="border:1px solid #E8EBE9;border-radius:13px;padding:16px;">
                     <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span style="font-size:13px;font-weight:700;">Revenue Trend</span><span style="font-size:12px;color: {{ bm.brand.revGrowthColor }};font-weight:600;">{{ bm.brand.revGrowth }}</span></div>
-                    <svg viewBox="0 0 320 90" preserveAspectRatio="none" style="width:100%;height:90px;">
+                    <svg viewBox="0 0 320 90" preserveAspectRatio="none" style="width:100%;height:96px;">
                     <line x1="0" y1="0" x2="320" y2="0" stroke="#F0F1F0" stroke-width="1"/>
                     <line x1="0" y1="45" x2="320" y2="45" stroke="#F0F1F0" stroke-width="1" stroke-dasharray="4,3"/>
                     <line x1="0" y1="90" x2="320" y2="90" stroke="#F0F1F0" stroke-width="1"/>
                     <polygon points="{{ bm.brand.area }}" fill="rgba(27,138,92,.09)"/>
                     <polyline points="{{ bm.brand.line }}" fill="none" stroke="#1B8A5C" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
                     <sc-for list="{{ bm.brand.brandTrendPts }}" as="pt" hint-placeholder-count="12">
-                      <circle cx="{{ pt.cx }}" cy="{{ pt.cy }}" r="4" fill="#fff" stroke="#1B8A5C" stroke-width="2" style="cursor:pointer;" onMouseEnter="{{ pt.fn }}" onMouseLeave="{{ pt.fl }}"/>
+                      <circle cx="{{ pt.cx }}" cy="{{ pt.cy }}" r="3" fill="#fff" stroke="#1B8A5C" stroke-width="1.8" style="cursor:pointer;" onMouseEnter="{{ pt.fn }}" onMouseLeave="{{ pt.fl }}"/>
                     </sc-for>
                   </svg>
                     <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#B7BDB9;margin-top:4px;"><span>Jan</span><span>Jun</span><span>Dec</span></div>
@@ -721,7 +721,7 @@
                   <div style="border:1px solid #E8EBE9;border-radius:13px;padding:16px;">
                     <div style="font-size:13px;font-weight:700;margin-bottom:12px;">Revenue Benchmark</div>
                     <sc-for list="{{ bm.brand.benchmarks }}" as="bk" hint-placeholder-count="4">
-                      <div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span style="color:#3C4440;font-weight:600;">{{ bk.label }}</span><span style="color:#5C6360;">{{ bk.fmt }}</span></div><div style="height:8px;background:#EEF0EE;border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background: {{ bk.color }};width: {{ bk.bw }};"></div></div></div>
+                      <div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span style="color:#3C4440;font-weight:600;">{{ bk.label }}</span><span style="color:#5C6360;">{{ bk.fmt }}</span></div><div style="height:10px;background:#EEF0EE;border-radius:4px;overflow:hidden;"><div style="height:100%;border-radius:4px;background: {{ bk.color }};width: {{ bk.bw }};"></div></div></div>
                     </sc-for>
                   </div>
                   <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
@@ -756,7 +756,7 @@
               <sc-for list="{{ bm.brand.rbList }}" as="r" hint-placeholder-count="5">
                 <div style="display:grid;grid-template-columns:40px 2fr 140px 1fr 1fr 1fr 90px;gap:10px;align-items:center;padding:13px 0;border-bottom:1px solid #F8F9F8;">
                   <span style="font-size:12px;color:#B7BDB9;font-weight:700;">{{ r.rank }}</span>
-                  <div><div style="display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;margin-bottom:5px;">{{ r.name }}<sc-if value="{{ r.hasStatus }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;background:#EBF5F0;color:#147A4F;">{{ r.statusLabel }}</span></sc-if></div><div style="height:5px;background:#EEF0EE;border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background:#1B8A5C;width: {{ r.barW }};"></div></div></div>
+                  <div><div style="display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;margin-bottom:5px;">{{ r.name }}<sc-if value="{{ r.hasStatus }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;background:#EBF5F0;color:#147A4F;">{{ r.statusLabel }}</span></sc-if></div><div style="height:7px;background:#EEF0EE;border-radius:3px;overflow:hidden;margin-top:4px;"><div style="height:100%;border-radius:3px;background:#1B8A5C;width: {{ r.barW }};"></div></div></div>
                   <span style="font-size:12.5px;color:#5C6360;">{{ r.shareOfBrand }}% of brand</span>
                   <span style="text-align:right;font-size:13.5px;font-weight:700;">{{ r.revFmt }}</span>
                   <span style="text-align:right;font-size:13px;font-weight:600;color: {{ r.growthColor }};">{{ r.growthFmt }}</span>
@@ -772,10 +772,10 @@
                 <div>
                   <div style="font-size:13px;font-weight:700;margin-bottom:12px;">Customer Segments</div>
                   <sc-for list="{{ bm.brand.segments }}" as="g" hint-placeholder-count="4">
-                    <div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;"><span style="font-weight:600;color:#3C4440;">{{ g.name }}</span><span style="font-weight:700;">{{ g.pct }}</span></div><div style="height:8px;background:#EEF0EE;border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background: {{ g.color }};width: {{ g.bw }};"></div></div></div>
+                    <div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px;"><span style="font-weight:600;color:#3C4440;">{{ g.name }}</span><span style="font-weight:700;">{{ g.pct }}</span></div><div style="height:10px;background:#EEF0EE;border-radius:4px;overflow:hidden;"><div style="height:100%;border-radius:4px;background: {{ g.color }};width: {{ g.bw }};"></div></div></div>
                   </sc-for>
                   <div style="margin-top:14px;font-size:13px;font-weight:700;margin-bottom:10px;">New vs Returning</div>
-                  <div style="display:flex;height:28px;border-radius:7px;overflow:hidden;"><div style="background:#1B8A5C;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11.5px;font-weight:600;width: {{ bm.brand.newBarB }};">New {{ bm.brand.newPctB }}</div><div style="background:#C5E3D3;display:flex;align-items:center;justify-content:center;color:#0F6B46;font-size:11.5px;font-weight:600;width: {{ bm.brand.retBarB }};">Returning {{ bm.brand.retPctB }}</div></div>
+                  <div style="display:flex;height:34px;border-radius:10px;overflow:hidden;"><div style="background:#1B8A5C;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11.5px;font-weight:600;width: {{ bm.brand.newBarB }};">New {{ bm.brand.newPctB }}</div><div style="background:#C5E3D3;display:flex;align-items:center;justify-content:center;color:#0F6B46;font-size:11.5px;font-weight:600;width: {{ bm.brand.retBarB }};">Returning {{ bm.brand.retPctB }}</div></div>
                 </div>
                 <div>
                   <div style="font-size:13px;font-weight:700;margin-bottom:12px;">Behaviour Metrics</div>
@@ -899,19 +899,19 @@
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;"><span style="font-size:14px;font-weight:700;">Revenue Trend</span><span style="font-size:12.5px;font-weight:700;color: {{ bm.store.revGrowthColor }};">{{ bm.store.revGrowth }}</span></div>
               <div style="font-size:12px;color:#9AA0A6;margin-bottom:6px;">6-month performance · contribution to brand: {{ bm.store.revContrib }}</div>
               <div style="display:flex;gap:6px;align-items:flex-start;">
-                <div style="display:flex;flex-direction:column;justify-content:space-between;height:100px;padding-top:4px;flex:none;width:44px;">
+                <div style="display:flex;flex-direction:column;justify-content:space-between;height:120px;padding-top:4px;flex:none;width:44px;">
                   <span style="font-size:9.5px;color:#B7BDB9;text-align:right;">{{ bm.store.trendYMax }}</span>
                   <span style="font-size:9.5px;color:#B7BDB9;text-align:right;">{{ bm.store.trendYMin }}</span>
                 </div>
                 <div style="flex:1;position:relative;">
-                  <svg viewBox="0 0 640 100" preserveAspectRatio="none" style="width:100%;height:100px;display:block;">
+                  <svg viewBox="0 0 640 100" preserveAspectRatio="none" style="width:100%;height:120px;display:block;">
                     <line x1="0" y1="0" x2="640" y2="0" stroke="#F0F1F0" stroke-width="1"/>
                     <line x1="0" y1="50" x2="640" y2="50" stroke="#F0F1F0" stroke-width="1" stroke-dasharray="4,3"/>
                     <line x1="0" y1="100" x2="640" y2="100" stroke="#F0F1F0" stroke-width="1"/>
                     <polygon points="{{ bm.store.area }}" fill="rgba(27,138,92,.09)"/>
                     <polyline points="{{ bm.store.line }}" fill="none" stroke="#1B8A5C" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
                     <sc-for list="{{ bm.store.trendPts }}" as="pt" hint-placeholder-count="12">
-                      <circle cx="{{ pt.cx }}" cy="{{ pt.cy }}" r="5" fill="#fff" stroke="#1B8A5C" stroke-width="2" style="cursor:pointer;" onMouseEnter="{{ pt.fn }}" onMouseLeave="{{ pt.fl }}"/>
+                      <circle cx="{{ pt.cx }}" cy="{{ pt.cy }}" r="4" fill="#fff" stroke="#1B8A5C" stroke-width="1.8" style="cursor:pointer;" onMouseEnter="{{ pt.fn }}" onMouseLeave="{{ pt.fl }}"/>
                     </sc-for>
                   </svg>
                 </div>
@@ -938,14 +938,14 @@
             </div>
             <div style="border:1px solid #E8EBE9;border-radius:14px;padding:18px 20px;">
               <div style="font-size:14px;font-weight:700;margin-bottom:12px;">Customer Intelligence</div>
-              <div style="display:flex;height:26px;border-radius:7px;overflow:hidden;margin-bottom:12px;"><div style="background:#1B8A5C;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11.5px;font-weight:600;width: {{ bm.store.newBar }};">New {{ bm.store.newPct }}</div><div style="background:#C5E3D3;display:flex;align-items:center;justify-content:center;color:#0F6B46;font-size:11.5px;font-weight:600;width: {{ bm.store.retBar }};">Returning {{ bm.store.retPct }}</div></div>
+              <div style="display:flex;height:34px;border-radius:10px;overflow:hidden;margin-bottom:12px;"><div style="background:#1B8A5C;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11.5px;font-weight:600;width: {{ bm.store.newBar }};">New {{ bm.store.newPct }}</div><div style="background:#C5E3D3;display:flex;align-items:center;justify-content:center;color:#0F6B46;font-size:11.5px;font-weight:600;width: {{ bm.store.retBar }};">Returning {{ bm.store.retPct }}</div></div>
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px;">
                 <div style="background:#F5F6F5;border-radius:9px;padding:11px;"><div style="font-size:10.5px;color:#9AA0A6;">Customer LTV (6mo)</div><div style="font-size:16px;font-weight:700;margin-top:3px;">{{ bm.store.clv }}</div></div>
                 <div style="background:#F5F6F5;border-radius:9px;padding:11px;"><div style="font-size:10.5px;color:#9AA0A6;">Wallet Share</div><div style="font-size:16px;font-weight:700;margin-top:3px;">{{ bm.store.walletShare }}</div></div>
               </div>
               <div style="font-size:12px;font-weight:700;margin-bottom:8px;">Customer Segments</div>
               <sc-for list="{{ bm.store.segments }}" as="g" hint-placeholder-count="4">
-                <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;"><span style="width:78px;font-size:11.5px;color:#3C4440;">{{ g.name }}</span><div style="flex:1;height:6px;background:#EEF0EE;border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background: {{ g.color }};width: {{ g.bw }};"></div></div><span style="font-size:11.5px;font-weight:600;width:30px;text-align:right;">{{ g.pct }}</span></div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;"><span style="width:78px;font-size:11.5px;color:#3C4440;">{{ g.name }}</span><div style="flex:1;height:9px;background:#EEF0EE;border-radius:4px;overflow:hidden;"><div style="height:100%;border-radius:4px;background: {{ g.color }};width: {{ g.bw }};"></div></div><span style="font-size:11.5px;font-weight:600;width:30px;text-align:right;">{{ g.pct }}</span></div>
               </sc-for>
             </div>
           </div>
@@ -956,7 +956,7 @@
               <sc-for list="{{ bm.store.bmarks }}" as="bk" hint-placeholder-count="5">
                 <div onMouseEnter="{{ bk.fn }}" onMouseLeave="{{ bk.fl }}" style="margin-bottom:13px;cursor:default;">
                   <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px;"><span style="font-weight:600;color:#3C4440;">{{ bk.label }}</span><span style="font-weight:700;color: {{ bk.color }};">{{ bk.fmt }}</span></div>
-                  <div style="height:8px;background:#EEF0EE;border-radius:4px;overflow:hidden;"><div style="height:100%;border-radius:4px;background: {{ bk.color }};width: {{ bk.bw }};transition:opacity .15s;" style-hover="opacity:.75;"></div></div>
+                  <div style="height:10px;background:#EEF0EE;border-radius:5px;overflow:hidden;"><div style="height:100%;border-radius:5px;background: {{ bk.color }};width: {{ bk.bw }};transition:opacity .15s;" style-hover="opacity:.75;"></div></div>
                 </div>
               </sc-for>
             </div>
@@ -964,10 +964,10 @@
               <div style="font-size:14px;font-weight:700;margin-bottom:12px;">Spending Behaviour</div>
               <div style="font-size:12px;font-weight:600;color:#5C6360;margin-bottom:7px;">By Hour · Peak <span style="color:#147A4F;">{{ bm.store.sPeakTime }}</span></div>
               <div style="display:flex;gap:6px;align-items:flex-end;margin-bottom:4px;">
-                <div style="display:flex;flex-direction:column;justify-content:space-between;height:70px;flex:none;">
+                <div style="display:flex;flex-direction:column;justify-content:space-between;height:96px;flex:none;">
                   <span style="font-size:9px;color:#C5CAC7;">100%</span><span style="font-size:9px;color:#C5CAC7;">0%</span>
                 </div>
-                <div style="flex:1;display:flex;align-items:flex-end;gap:2px;height:70px;">
+                <div style="flex:1;display:flex;align-items:flex-end;gap:2px;height:96px;">
                   <sc-for list="{{ bm.store.sHourly }}" as="h" hint-placeholder-count="24">
                     <div onMouseEnter="{{ h.fn }}" onMouseLeave="{{ h.fl }}" style="flex:1;display:flex;align-items:flex-end;height:100%;cursor:default;"><div style="width:100%;border-radius:2px 2px 0 0;background: {{ h.color }};height: {{ h.bh }};transition:opacity .15s;" style-hover="opacity:.75;"></div></div>
                   </sc-for>
@@ -975,7 +975,7 @@
               </div>
               <div style="display:flex;justify-content:space-between;font-size:9.5px;color:#B7BDB9;margin-bottom:12px;padding-left:22px;"><span>12a</span><span>6a</span><span>12p</span><span>6p</span><span>11p</span></div>
               <div style="font-size:12px;font-weight:600;color:#5C6360;margin-bottom:7px;">By Day · Peak <span style="color:#147A4F;">{{ bm.store.sPeakDay }}</span></div>
-              <div style="display:flex;align-items:flex-end;gap:6px;height:58px;">
+              <div style="display:flex;align-items:flex-end;gap:6px;height:80px;">
                 <sc-for list="{{ bm.store.sDaily }}" as="d" hint-placeholder-count="7">
                   <div onMouseEnter="{{ d.fn }}" onMouseLeave="{{ d.fl }}" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:5px;cursor:default;"><div style="width:100%;border-radius:4px 4px 0 0;background: {{ d.color }};height: {{ d.bh }};transition:opacity .15s;" style-hover="opacity:.75;"></div><span style="font-size:9.5px;color:#9AA0A6;">{{ d.label }}</span></div>
                 </sc-for>
@@ -986,7 +986,7 @@
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:18px;">
             <div style="border:1px solid #E8EBE9;border-radius:14px;padding:18px 20px;">
               <div style="font-size:14px;font-weight:700;margin-bottom:12px;">Payment Behaviour</div>
-              <div style="display:flex;height:12px;border-radius:6px;overflow:hidden;margin-bottom:8px;"><sc-for list="{{ bm.store.cardMix }}" as="c" hint-placeholder-count="3"><div style="height:100%;background: {{ c.color }};width: {{ c.bw }};"></div></sc-for></div>
+              <div style="display:flex;height:20px;border-radius:7px;overflow:hidden;margin-bottom:10px;"><sc-for list="{{ bm.store.cardMix }}" as="c" hint-placeholder-count="3"><div style="height:100%;background: {{ c.color }};width: {{ c.bw }};"></div></sc-for></div>
               <div style="display:flex;gap:11px;flex-wrap:wrap;margin-bottom:14px;"><sc-for list="{{ bm.store.cardMix }}" as="c" hint-placeholder-count="3"><span style="display:flex;align-items:center;gap:5px;font-size:11.5px;color:#5C6360;"><span style="width:8px;height:8px;border-radius:2px;background: {{ c.color }};"></span>{{ c.name }} <b style="color:#1A1A1A;">{{ c.pct }}</b></span></sc-for></div>
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
                 <div style="background:#F5F6F5;border-radius:9px;padding:10px;"><div style="font-size:10px;color:#9AA0A6;">Contactless</div><div style="font-size:15px;font-weight:700;margin-top:2px;">{{ bm.store.contactless }}</div></div>
@@ -1000,7 +1000,7 @@
               <div style="display:flex;align-items:center;gap:10px;background:#F5F6F5;border-radius:10px;padding:12px;margin-bottom:14px;"><div style="text-align:center;flex:none;"><div style="font-size:22px;font-weight:800;">{{ bm.store.compCnt }}</div><div style="font-size:10px;color:#9AA0A6;">competitors</div></div><div style="width:1px;height:32px;background:#E8EBE9;flex:none;"></div><div><div style="font-size:13px;font-weight:700;">{{ bm.store.compLabel }}</div><div style="font-size:11.5px;color:#9AA0A6;margin-top:2px;">Score: {{ bm.store.compScore }}/100</div></div></div>
               <div style="font-size:12px;font-weight:700;margin-bottom:9px;">Customer Catchment</div>
               <sc-for list="{{ bm.store.catchment }}" as="ca" hint-placeholder-count="4">
-                <div style="margin-bottom:9px;"><div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px;"><span style="color:#3C4440;">{{ ca.name }}</span><span style="font-weight:700;">{{ ca.pct }}</span></div><div style="height:7px;background:#EEF0EE;border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background:#2BA89A;width: {{ ca.bw }};"></div></div></div>
+                <div style="margin-bottom:9px;"><div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px;"><span style="color:#3C4440;">{{ ca.name }}</span><span style="font-weight:700;">{{ ca.pct }}</span></div><div style="height:9px;background:#EEF0EE;border-radius:4px;overflow:hidden;"><div style="height:100%;border-radius:4px;background:#2BA89A;width: {{ ca.bw }};"></div></div></div>
               </sc-for>
             </div>
             <div style="border:1px solid #E8EBE9;border-radius:14px;padding:18px 20px;">
