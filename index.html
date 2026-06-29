@@ -246,7 +246,7 @@
       <!-- 5. CUSTOMER BEHAVIOUR -->
       <!-- 4. CUSTOMER INTELLIGENCE -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
-        <div style="background:#fff;border:1px solid #E8EBE9;border-radius:16px;padding:18px 20px;">
+        <div style="background:#fff;border:1px solid #E8EBE9;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;">
           <div style="font-size:15px;font-weight:700;">Spending Behaviour</div>
           <div style="margin-top:16px;">
             <div style="font-size:12px;font-weight:600;color:#9AA0A6;text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px;">Hour of Day · Peak <span style="color:#147A4F;">{{ peakTime }}</span></div>
@@ -266,9 +266,9 @@
               </div>
             </div>
           </div>
-          <div style="margin-top:14px;">
+          <div style="margin-top:14px;flex:1;display:flex;flex-direction:column;">
             <div style="font-size:12px;font-weight:600;color:#9AA0A6;text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px;">Day of Week · Peak <span style="color:#147A4F;">{{ peakDay }}</span></div>
-            <div style="display:flex;align-items:flex-end;gap:8px;height:84px;">
+            <div style="flex:1;display:flex;align-items:flex-end;gap:8px;min-height:84px;">
               <sc-for list="{{ daily }}" as="d" hint-placeholder-count="7">
                 <div onMouseEnter="{{ d.fn }}" onMouseLeave="{{ d.fl }}" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:5px;cursor:default;">
                   <div style="width:100%;border-radius:4px 4px 0 0;background: {{ d.color }};height: {{ d.bh }};transition:opacity .15s;" style-hover="opacity:.75;"></div>
@@ -960,7 +960,7 @@
                 </div>
               </sc-for>
             </div>
-            <div style="border:1px solid #E8EBE9;border-radius:14px;padding:18px 20px;">
+            <div style="border:1px solid #E8EBE9;border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;">
               <div style="font-size:14px;font-weight:700;margin-bottom:12px;">Spending Behaviour</div>
               <div style="font-size:12px;font-weight:600;color:#5C6360;margin-bottom:7px;">By Hour · Peak <span style="color:#147A4F;">{{ bm.store.sPeakTime }}</span></div>
               <div style="display:flex;gap:6px;align-items:flex-end;margin-bottom:4px;">
@@ -975,7 +975,7 @@
               </div>
               <div style="display:flex;justify-content:space-between;font-size:9.5px;color:#B7BDB9;margin-bottom:12px;padding-left:22px;"><span>12a</span><span>6a</span><span>12p</span><span>6p</span><span>11p</span></div>
               <div style="font-size:12px;font-weight:600;color:#5C6360;margin-bottom:7px;">By Day · Peak <span style="color:#147A4F;">{{ bm.store.sPeakDay }}</span></div>
-              <div style="display:flex;align-items:flex-end;gap:6px;height:80px;">
+              <div style="flex:1;display:flex;align-items:flex-end;gap:6px;min-height:80px;">
                 <sc-for list="{{ bm.store.sDaily }}" as="d" hint-placeholder-count="7">
                   <div onMouseEnter="{{ d.fn }}" onMouseLeave="{{ d.fl }}" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:5px;cursor:default;"><div style="width:100%;border-radius:4px 4px 0 0;background: {{ d.color }};height: {{ d.bh }};transition:opacity .15s;" style-hover="opacity:.75;"></div><span style="font-size:9.5px;color:#9AA0A6;">{{ d.label }}</span></div>
                 </sc-for>
